@@ -1,4 +1,4 @@
-
+/* just a test, OK? */
 
 import java.awt.Image;
 import java.awt.image.BufferedImage;
