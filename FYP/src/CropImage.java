@@ -114,8 +114,7 @@ public class CropImage {
 //		
 //		
 	}
-//
-//
+
 	private void selectAndSave(String fn) {
 	String directoryPathOriginals = "/Users/Delilah/Documents/finalproject/AllCroppedImages/";
 	String directoryPathPositive = "/users/delilah/documents/finalproject/PosAndNeg/pos1/";

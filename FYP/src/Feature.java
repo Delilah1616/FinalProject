@@ -65,6 +65,7 @@ import org.opencv.objdetect.CascadeClassifier;
 					if (stringBuilder.length() > 0)
 						stringBuilder.append(",");
 					stringBuilder.append(d[(int) (y * size.height + x)]);
+					//System.out.println(d);
 				}
 			}
 			return stringBuilder.toString();
@@ -156,7 +157,7 @@ import org.opencv.objdetect.CascadeClassifier;
 				Imgproc.cvtColor(image, grayImage, Imgproc.COLOR_RGB2GRAY);
 
 				MatOfFloat smallGrayImage = new MatOfFloat();
-				Imgproc.resize(grayImage, smallGrayImage, new Size(250, 551));
+				Imgproc.resize(grayImage, smallGrayImage, new Size(378, 630));
 				//Imgproc.resize(image, smallGrayImage, new Size(60, 150));
 				//Imgproc.resize(grayImage, smallGrayImage, new Size(60, 150));
 				//Imgproc.resize(image, smallGrayImage, new Size(60, 150));
@@ -168,7 +169,7 @@ import org.opencv.objdetect.CascadeClassifier;
 //						+ matToCSVString(smallGrayImage));
 				
 				Size windowSize = smallGrayImage.size(); // for example suppose the image is 192x192
-				Size cellSize = new Size(45,45); // 192 is a multiple of 32
+				Size cellSize = new Size(63,63); // 192 is a multiple of 32
 				Size blockSize = new Size(3*cellSize.height, 3*cellSize.width);
 				Size blockStride = new Size(cellSize.height, cellSize.width);
 				int nbins = 9;
@@ -178,7 +179,7 @@ import org.opencv.objdetect.CascadeClassifier;
 		                 
 				HOGDescriptor hog = new HOGDescriptor(windowSize, blockSize, blockStride, cellSize, nbins);
 				MatOfFloat feature = new MatOfFloat();
-				System.out.println("Before");
+				//System.out.println("Before");
 				hog.compute(smallGrayImage, feature);
 				//System.out.println("After");
 
@@ -220,10 +221,10 @@ import org.opencv.objdetect.CascadeClassifier;
 				Imgproc.cvtColor(image, grayImage, Imgproc.COLOR_RGB2GRAY);
 				
 				Mat smallGrayImage = new Mat();
-				Imgproc.resize(grayImage, smallGrayImage, new Size(250, 551));
+				Imgproc.resize(grayImage, smallGrayImage, new Size(378, 630));
 
 				Size windowSize = smallGrayImage.size(); // for example suppose the image is 192x192
-				Size cellSize = new Size(45,45); // 192 is a multiple of 32
+				Size cellSize = new Size(63,63); // 192 is a multiple of 32
 				Size blockSize = new Size(3*cellSize.height, 3*cellSize.width);
 				Size blockStride = new Size(cellSize.height, cellSize.width);
 				int nbins = 9;
@@ -236,7 +237,7 @@ import org.opencv.objdetect.CascadeClassifier;
 //				MatOfFloat x = new MatOfFloat();
 //				HOGDescriptor hg = new HOGDescriptor();
 				//System.out.println("Before");
-				hog.compute(smallGrayImage, feature);
+				//hog.compute(smallGrayImage, feature);
 				//System.out.println("After");
 				
 				
