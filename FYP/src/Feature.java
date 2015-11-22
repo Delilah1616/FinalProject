@@ -70,53 +70,6 @@ import org.opencv.objdetect.CascadeClassifier;
 			return stringBuilder.toString();
 		}
 		
-//		public static String matToCSVString2(Mat m) {
-//			// Precondition: m is a matrix x*y*1 (gray image)
-//			//Size size = m.size();
-//			int w = m.width();
-//			int h = m.height();
-//			StringBuilder stringBuilder = new StringBuilder();
-//			
-//			float[] d = new float[(int) (h)];
-//			m.get(0, 0, d);
-//			
-			//System.out.println("data copied to array");
-		
-//		public static String matToCSVString2(Vector m) {
-//			// Precondition: m is a matrix x*y*1 (gray image)
-//			//Size size = m.size();
-//			int w = m.size();
-//			//int h = m.height();
-//			StringBuilder stringBuilder = new StringBuilder();
-//			
-//			float[] d = new float[(int) (w)];
-//			m.setElementAt(d,w);;
-//			
-//			for (int i = 0; i < w; i++) {
-//				if (stringBuilder.length() > 0)
-//					stringBuilder.append(",");
-//				stringBuilder.append(d[i]);
-//			}
-
-			
-//			for (int i = 0; i < h; i++) {
-//				if (stringBuilder.length() > 0)
-//					stringBuilder.append(",");
-//				stringBuilder.append(d[i]);
-//			}
-			
-//			double[] d = new double[(int) (w * h)];
-//			m.get(0, 0, d);
-//			for (int x = 0; x < h; x++) {
-//				for (int y = 0; y < w; y++) {
-//					if (stringBuilder.length() > 0)
-//						stringBuilder.append(",");
-//					stringBuilder.append(d[(int) (y * h + x)]);
-//				}
-//			}
-			//return stringBuilder.toString();
-		//}
-		
 		PrintWriter printwriter;
 		
 		public void run() throws FileNotFoundException, UnsupportedEncodingException {
@@ -135,127 +88,7 @@ import org.opencv.objdetect.CascadeClassifier;
 			generateAndPrint("/Users/Delilah/Documents/finalproject/PosAndNeg/neg1/", "Y");
 			printwriter.close();
 		}
-//		File folderPos = new File("/Users/Delilah/Documents/finalproject/PosAndNeg/pos1/");
-//			File[] listOfFilesPos = folderPos.listFiles();
-//
-//			File folderNeg = new File("/Users/Delilah/Documents/finalproject/PosAndNeg/neg1/");
-//			File[] listOfFilesNeg = folderNeg.listFiles();
-//			
-//			
-//
-//			 //for (int i = 0; i < 5;i++){//listOfFiles.length; i++){
-//			for (int i = 0; i < listOfFilesPos.length; i++) {
-//				String picname = (listOfFilesPos[i]).getName(); // filename in input
-//																// folder
-//				 //System.out.println(picname);
-//				String PosPath = "/Users/Delilah/Documents/finalproject/PosAndNeg/pos1/"; // input
-//																				// folder
-//				String picPathName = PosPath + picname; // pic filename is the
-//														// foldername and the
-//														// filename
-//				// System.out.println(picPathName);
-//				
-//				String positiveS = "N";
-//				Mat image = Imgcodecs.imread(picPathName);
-//				//hg.compute(image, x, winStride, padding, locations);
-//				//hg.computeGradient(image, image.g, image);
-//				//System.out.println(x.dump());
-//				MatOfFloat grayImage = new MatOfFloat();
-//				Imgproc.cvtColor(image, grayImage, Imgproc.COLOR_RGB2GRAY);
-//
-//				MatOfFloat smallGrayImage = new MatOfFloat();
-//				Imgproc.resize(grayImage, smallGrayImage, new Size(378, 630));
-//				//Imgproc.resize(image, smallGrayImage, new Size(60, 150));
-//				//Imgproc.resize(grayImage, smallGrayImage, new Size(60, 150));
-//				//Imgproc.resize(image, smallGrayImage, new Size(60, 150));
-////				System.out.println(positiveS + ","
-////						+ matToCSVString(smallImage)); // adding the string "N"
-//															// to matToCSNString
-//				
-////				printwriter.println(positiveS + ","
-////						+ matToCSVString(smallGrayImage));
-//				
-//				Size windowSize = smallGrayImage.size(); // for example suppose the image is 192x192
-//				Size cellSize = new Size(63,63); // 192 is a multiple of 32
-//				Size blockSize = new Size(3*cellSize.height, 3*cellSize.width);
-//				Size blockStride = new Size(cellSize.height, cellSize.width);
-//				int nbins = 9;
-//				 //HOGDescriptor( windowSize= Size(60, 150), blockSize= size(30, 30),
-//		           //       blockStride=Size(30, 30), cellSize=Size(30, 30));
-//		                 
-//		                 
-//				HOGDescriptor hog = new HOGDescriptor(windowSize, blockSize, blockStride, cellSize, nbins);
-//				MatOfFloat feature = new MatOfFloat();
-//				//System.out.println("Before");
-//				hog.compute(smallGrayImage, feature);
-//				//System.out.println("After");
-//
-//				//MatOfFloat x = new MatOfFloat();
-//				//HOGDescriptor hg = new HOGDescriptor(windowSize, blockSize, blockStride, cellSize, nbins);
-//				//System.out.println("Before");
-//				//hg.compute(smallGrayImage, x);
-//				//System.out.println("After");
-//				
-//				// the size is an important factor in computing the HOGDescriptor, as it takes a very long time to process each image
-//				//System.out.println(x.width()  + ", "+ x.height() );
-//				
-//				//System.out.println(feature.size());
-//				
-//				printwriter.println(positiveS + ","
-//					+ matToCSVString(feature));//x.dump());
-//				//System.out.println(positiveS + ","
-//						//+ matToCSVString(feature));
-//				
-//			}
-//			 
-//			 //System.exit(0);
-//
-//			for (int i = 0; i < listOfFilesNeg.length; i++)
-//			 //for(int i = 0; i < 2; i++){
-//			{
-//				String picname = (listOfFilesNeg[i]).getName(); // filename in input
-//																// folder
-//				// System.out.println(picname);
-//				String NegPath = "/Users/Delilah/Documents/finalproject/PosAndNeg/neg1/"; // input
-//																				// folder
-//				String picPathName = NegPath + picname; // pic filename is the
-//														// foldername and the
-//														// filename
-//				// System.out.println(picPathName);
-//				String negativeS = "Y";
-//				Mat image = Imgcodecs.imread(picPathName);
-//				Mat grayImage = new Mat();
-//				Imgproc.cvtColor(image, grayImage, Imgproc.COLOR_RGB2GRAY);
-//				
-//				Mat smallGrayImage = new Mat();
-//				Imgproc.resize(grayImage, smallGrayImage, new Size(378, 630));
-//
-//				Size windowSize = smallGrayImage.size(); // for example suppose the image is 192x192
-//				Size cellSize = new Size(63,63); // 192 is a multiple of 32
-//				Size blockSize = new Size(3*cellSize.height, 3*cellSize.width);
-//				Size blockStride = new Size(cellSize.height, cellSize.width);
-//				int nbins = 9;
-//				
-//				HOGDescriptor hog = new HOGDescriptor(windowSize, blockSize, blockStride, cellSize, nbins);
-//				MatOfFloat feature = new MatOfFloat();
-//				//System.out.println("Before");
-//				hog.compute(smallGrayImage, feature);
-//				
-////				MatOfFloat x = new MatOfFloat();
-////				HOGDescriptor hg = new HOGDescriptor();
-//				//System.out.println("Before");
-//				//hog.compute(smallGrayImage, feature);
-//				//System.out.println("After");
-//				
-//				
-////				printwriter.println(negativeS + ","
-////						+ matToCSVString(smallGrayImage));
-//
-//				printwriter.println(negativeS + ","
-//					+ matToCSVString(feature));
-//			}
-//			
-		
+	
 
 		public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
 			Feature fd = new Feature();
@@ -273,9 +106,7 @@ import org.opencv.objdetect.CascadeClassifier;
 																	// folder												// folder
 					String picPathName = path + picname; // pic filename is the
 															// foldername and the
-															// filename
-					// System.out.println(picPathName);
-					//String negativeS = "Y";
+									
 					Mat image = Imgcodecs.imread(picPathName);
 					Mat grayImage = new Mat();
 					Imgproc.cvtColor(image, grayImage, Imgproc.COLOR_RGB2GRAY);
@@ -293,16 +124,6 @@ import org.opencv.objdetect.CascadeClassifier;
 					MatOfFloat feature = new MatOfFloat();
 					//System.out.println("Before");
 					hog.compute(smallGrayImage, feature);
-					
-//					MatOfFloat x = new MatOfFloat();
-//					HOGDescriptor hg = new HOGDescriptor();
-					//System.out.println("Before");
-					//hog.compute(smallGrayImage, feature);
-					//System.out.println("After");
-					
-					
-//					printwriter.println(negativeS + ","
-//							+ matToCSVString(smallGrayImage));
 
 					printwriter.println(type + ","
 						+ matToCSVString(feature));
